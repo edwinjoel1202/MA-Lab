@@ -1,0 +1,20 @@
+import pygame
+import os
+
+# Initialize pygame mixer
+pygame.mixer.init()
+
+# Specify the file path
+sound_file = r"C:\Users\mgrat\Downloads\file1.wav"
+
+# Check if the file exists
+if os.path.exists(sound_file):
+    # Load and play the sound
+    sound = pygame.mixer.Sound(sound_file)
+    sound.play()
+
+    # Wait for the sound to finish playing
+    pygame.time.wait(int(sound.get_length() * 1000))
+
+# Quit the mixer
+pygame.mixer.quit()
